@@ -10,7 +10,7 @@ export class TitlesearchPipe implements PipeTransform {
       if(!searchByTitle){
             return value;
       }
-   const titleBy=search.title.toLowerCase().startsWith(searchByTitle.toLowerCase())
+   let titleBy=search.title.toLowerCase().startsWith(searchByTitle.toLowerCase())
    return titleBy;
     })
   }

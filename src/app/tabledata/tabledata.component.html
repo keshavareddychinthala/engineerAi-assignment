@@ -1,15 +1,15 @@
 <br>
 <div class=" col-6" style="margin-left:170px;">
     <label>SearchByTitle</label>
-<input type="search" [(ngModel)]="title" class="form-control" placeholder="search By Title">
+    <input type="search" [(ngModel)]="searchByTitle" class="form-control" placeholder="search By Title">
 
 </div>
 <br>
 <div class="container">
     <div class="mx-auto">
-    <h3 style="text-align: center;"> Data Table</h3>
-   </div>
-    <table class="table table-bordered table-hover   ">
+        <h3 style="text-align: center;"> Data Table</h3>
+    </div>
+    <table class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>title</th>
@@ -21,7 +21,8 @@
 
         </thead>
         <tbody>
-            <tr *ngFor="let data of tableData | titlesearch:title;let i=index" (click)="displaymodel(data,i)"  data-toggle="modal" data-target="#rowmodal" [class.active]="i==selectedRow">
+            <tr *ngFor="let data of tableData | titlesearch:searchByTitle;let i=index" (click)="displaymodel(data,i)"
+                data-toggle="modal" data-target="#rowmodal" [class.active]="i==selectedRow">
 
                 <td>{{ data.title}}</td>
 
@@ -41,22 +42,25 @@
 
 
 </div>
+
+
+
 <div class="modal fade" id="rowmodal" tabindex="-1" role="dialog" aria-labelledby="example" aria-hidden="true">
-    <div class="modal-dialog modal-lg"  role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="example">Row Data</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="example">Row Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <pre>{{rawJson|json}}</pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn1" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn2 ">Save changes</button>
+            </div>
         </div>
-        <div class="modal-body">
-       <pre>{{rawJson|json}}</pre>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn1" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn2 ">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>

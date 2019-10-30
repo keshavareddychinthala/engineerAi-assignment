@@ -2,9 +2,9 @@
     background-color:#123456 !important;
     color: white;
   }
-/* .container{
-    background-color:  #EBF5FB ;
-} */
+ .container{
+   margin-left: 40px;
+} 
 .btn1{
     background-color: #F1BFD8;
     color: white;
