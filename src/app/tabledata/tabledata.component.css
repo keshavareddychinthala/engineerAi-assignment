@@ -2,9 +2,9 @@
     background-color:#123456 !important;
     color: white;
   }
-.container{
+/* .container{
     background-color:  #EBF5FB ;
-}
+} */
 .btn1{
     background-color: #F1BFD8;
     color: white;
@@ -13,3 +13,6 @@
     background-color: #044549;
     color: white;
 }
+ .table{
+     background-color:  #EBF5FB ;  
+    }
