@@ -17,9 +17,10 @@ data;
   ngOnInit() {
     this.subscribe=timer(0,10000).pipe(
       switchMap(()=>this.service.getTableData())
-    ).subscribe(res=>{console.log(res,"this is data from api")
+    ).subscribe(res=>{
      this.data=res;
      this.tableData=this.data.hits
+     console.log(this.tableData,"for array")
   })
   }
   displaymodel(data,i){
